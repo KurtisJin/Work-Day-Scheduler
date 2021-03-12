@@ -4,7 +4,7 @@
 A simple calendar application that allows user to save events for each hour of the day. This application will run in the browser and will save to local storage preventing refresh of data when the application reloads.
 
 ## Link to Project:
-https://kurtisjin.github.io/Work-Day-Scheduler-/
+https://kurtisjin.github.io/Work-Day-Scheduler/
 
 ## Content:
 1. index.html
