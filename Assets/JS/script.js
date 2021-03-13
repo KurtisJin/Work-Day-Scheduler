@@ -1,7 +1,7 @@
 //variables targetting index
 let timeDisplayEl = $('#time-block');
 let saveButton = $('.saveBtn');
-let textArea = $('.description');
+let textArea = $('.time-block');
 
 //current day and time
 var rightNow = moment().format('dddd MMMM Do');
@@ -21,25 +21,27 @@ $(document).ready(function () {
   function colorChange() {
 
     var currentTime = moment().hour();
+    console.log(currentTime);
 //loop over time blocks
     textArea.each(function() { 
       var scheduledTime = parseInt($(this).attr("id"));
+      console.log(scheduledTime);
 
       //checks the time and if it meets requirement, it runs the class for background indicators
       if(currentTime > scheduledTime) {
-        textArea.removeClass("past");
-        textArea.removeClass("present");
-        textArea.addClass("future");
+        $(this).removeClass("future");
+        $(this).removeClass("present");
+        $(this).addClass("past");
         
       } else if(currentTime < scheduledTime) {
-        textArea.removeClass("future");
-        textArea.removeClass("present");
-        textArea.addClass("past");
+        $(this).removeClass("past");
+        $(this).removeClass("present");
+        $(this).addClass("future");
 
       } else {
-        textArea.removeClass("past");
-        textArea.removeClass("future");
-        textArea.addClass("present");
+        $(this).removeClass("past");
+        $(this).removeClass("future");
+        $(this).addClass("present");
       }
     })
   }
@@ -48,12 +50,11 @@ $(document).ready(function () {
   $('#10AM .description').val(localStorage.getItem("10AM"));  
   $('#11AM .description').val(localStorage.getItem("11AM"));  
   $('#12PM .description').val(localStorage.getItem("12PM"));  
-  $('#1PM .description').val(localStorage.getItem("1PM"));  
-  $('#2PM .description').val(localStorage.getItem("2PM"));  
-  $('#3PM .description').val(localStorage.getItem("3PM"));  
-  $('#4PM .description').val(localStorage.getItem("4PM"));  
-  $('#5PM .description').val(localStorage.getItem("5PM"));  
+  $('#13PM .description').val(localStorage.getItem("13PM"));  
+  $('#14PM .description').val(localStorage.getItem("14PM"));  
+  $('#15PM .description').val(localStorage.getItem("15PM"));  
+  $('#16PM .description').val(localStorage.getItem("16PM"));  
+  $('#17PM .description').val(localStorage.getItem("17PM"));  
 
   colorChange()
 })
-
