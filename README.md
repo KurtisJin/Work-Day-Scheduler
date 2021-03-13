@@ -1,4 +1,5 @@
 # Work-Day-Scheduler
+This project contains a simple scheduler where you can type in the text and save. When on page reload, the data saved will still be in the same time frame where it was placed. 
 
 ## Description:
 A simple calendar application that allows user to save events for each hour of the day. This application will run in the browser and will save to local storage preventing refresh of data when the application reloads.
